@@ -20,8 +20,8 @@
                 <input type="text" v-model="newtodotext" @keyup.enter="add" placeholder="Inserisci un nuovo To Do">
                 <button @click="add">Aggiungi</button>
 
-                <div v-for="(element, index) in todo">
-                    <h5>{{todo[index].todotext}} <span @click="remove(index)">X</span></h5>
+                <div class="mytodolist" v-for="(element, index) in todo">
+                    <h5 class="testobarrato">{{todo[index].todotext}} </h5> <img class="redcross" @click="remove(index)" src="https://www.accetturaonline.it/blog/wp-content/uploads/2016/01/X-Rossa.png" alt="">
                 </div>
             </div>
         </main>

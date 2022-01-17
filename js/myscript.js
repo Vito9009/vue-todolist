@@ -50,6 +50,7 @@ var app = new Vue({
 
     methods: {
         add: function(){
+            if(this.newtodotext != ''){
             this.todo.push(
             {
                 todotext: this.newtodotext,
@@ -57,10 +58,12 @@ var app = new Vue({
             }
             );
             this.newtodotext = "";
+        }
         },
 
         remove: function(rem){
             this.todo.splice(rem, 1);
-        }
+        },
+
     }
   })

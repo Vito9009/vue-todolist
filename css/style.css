@@ -3,7 +3,12 @@ body{
     justify-content: center;
 }
 
-h5{
+.mytodolist{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.redcross{
+    height: 20px;
 }
