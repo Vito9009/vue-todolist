@@ -49,8 +49,8 @@ var app = new Vue({
     },
 
     methods: {
-        add: function(){
-            if(this.newtodotext != ''){
+        add: function(){                           // Aggiungi elementi alla to to tist
+            if(this.newtodotext != ''){            // Non aggiungere elementi se l'input è vuoto
             this.todo.push(
             {
                 todotext: this.newtodotext,
@@ -59,20 +59,27 @@ var app = new Vue({
             );
             this.newtodotext = "";
         }else{
-            alert("Non hai scritto nulla. È inutile aggiungere un ToDo vuoto ;)")
+            alert("Non hai scritto nulla. È inutile aggiungere un ToDo vuoto ;)")   // Alert che appare con input vuoto
         }
         },
 
-        remove: function(rem){
-            this.todo.splice(rem, 1);
+        remove: function(i){                        // Rimuovi elementi dalla to do list
+            this.todo.splice(i, 1);
         },
 
-        crossedoutdone: function(i){
+        crossedoutdone: function(i){                // Aggiungi barra all'elemento con tododone true
             if (this.todo[i].tododone == true){
                 return "crossedout";
             }
             return "";
         },
 
+        togglecrossedout: function(i){              // Se il tododone ha true quest'ultimo diventa false
+            if (this.todo[i].tododone == true){     // (inserito nel click per barrare i to do svolti e togliere barra
+                this.todo[i].tododone = false;      // ad elementi non svolti)
+            } else {
+                this.todo[i].tododone = true;
+            }
+        },
     }
   })
