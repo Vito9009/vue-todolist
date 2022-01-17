@@ -57,7 +57,10 @@ var app = new Vue({
             }
             );
             this.newtodotext = "";
-            console.log(this.todo);
+        },
+
+        remove: function(rem){
+            this.todo.splice(rem, 1);
         }
     }
   })

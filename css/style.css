@@ -2,3 +2,8 @@ body{
     display: flex;
     justify-content: center;
 }
+
+h5{
+    display: flex;
+    justify-content: space-between;
+}

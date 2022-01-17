@@ -18,9 +18,10 @@
         <main>
             <div>
                 <input type="text" v-model="newtodotext" @keyup.enter="add" placeholder="Inserisci un nuovo To Do">
+                <button @click="add">Aggiungi</button>
 
                 <div v-for="(element, index) in todo">
-                    <h5>{{todo[index].todotext}}</h5>
+                    <h5>{{todo[index].todotext}} <span @click="remove(index)">X</span></h5>
                 </div>
             </div>
         </main>
