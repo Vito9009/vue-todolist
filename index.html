@@ -10,8 +10,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div id="">
+    <div id="myvuecontainer">
+        <header>
+            <h1>To Do List</h1>
+        </header>
 
+        <main>
+            <div>
+                <input type="text" v-model="newtodotext" @keyup.enter="add" placeholder="Inserisci un nuovo To Do">
+
+                <div v-for="(element, index) in todo">
+                    <h5>{{todo[index].todotext}}</h5>
+                </div>
+            </div>
+        </main>
     </div>
 
     
