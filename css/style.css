@@ -12,3 +12,8 @@ body{
 .redcross{
     height: 20px;
 }
+
+.crossedout{
+    color: rgb(21, 221, 21);
+    text-decoration: line-through;
+}

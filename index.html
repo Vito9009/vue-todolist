@@ -21,7 +21,8 @@
                 <button @click="add">Aggiungi</button>
 
                 <div class="mytodolist" v-for="(element, index) in todo">
-                    <h5 class="testobarrato">{{todo[index].todotext}} </h5> <img class="redcross" @click="remove(index)" src="https://www.accetturaonline.it/blog/wp-content/uploads/2016/01/X-Rossa.png" alt="">
+                    <h5 v-bind:class="crossedoutdone(index)">{{element.todotext}}</h5>
+                    <img class="redcross" @click="remove(index)" src="https://www.accetturaonline.it/blog/wp-content/uploads/2016/01/X-Rossa.png" alt="">
                 </div>
             </div>
         </main>

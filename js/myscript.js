@@ -27,23 +27,23 @@ Bonus:
 var app = new Vue({
     el: '#myvuecontainer',
     data: {
-      newtodotext: "",
-      todo: [
+        newtodotext: "",
+        todo: [
           {
             todotext: 'Creare lista To Do',
-            tododone: 'true'
+            tododone: true
           },
           {
             todotext: 'Pulire casa',
-            tododone: 'false'
+            tododone: false
           },
           {
             todotext: 'Fare la spesa',
-            tododone: 'false'
+            tododone: false
           },
           {
             todotext: 'Guardare serie TV',
-            tododone: 'false'
+            tododone: false
           }
       ]
     },
@@ -58,11 +58,20 @@ var app = new Vue({
             }
             );
             this.newtodotext = "";
+        }else{
+            alert("Non hai scritto nulla. È inutile aggiungere un ToDo vuoto ;)")
         }
         },
 
         remove: function(rem){
             this.todo.splice(rem, 1);
+        },
+
+        crossedoutdone: function(i){
+            if (this.todo[i].tododone == true){
+                return "crossedout";
+            }
+            return "";
         },
 
     }
