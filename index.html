@@ -23,13 +23,17 @@
                 
                 <button @click="add">Aggiungi</button>
 
-                <div class="mytodolist" v-for="(element, index) in todo">
-                    <h5 v-bind:class="crossedoutdone(index)" 
-                    @click="togglecrossedout(index)">{{element.todotext}}</h5>
+                <div v-if="todo.length > 0">
+                    <div class="mytodolist" v-for="(element, index) in todo">
+                        <h5 v-bind:class="crossedoutdone(index)" 
+                        @click="togglecrossedout(index)">{{element.todotext}}</h5>
 
-                    <img class="redcross" @click="remove(index)" 
-                    src="https://www.accetturaonline.it/blog/wp-content/uploads/2016/01/X-Rossa.png" alt="">
+                        <img class="redcross" @click="remove(index)" 
+                        src="https://www.accetturaonline.it/blog/wp-content/uploads/2016/01/X-Rossa.png" alt="">
+                    </div>
                 </div>
+
+                <h2 v-else>Non ci sono To Do</h2>
             </div>
         </main>
     </div>

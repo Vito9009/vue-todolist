@@ -54,7 +54,7 @@ var app = new Vue({
             this.todo.push(
             {
                 todotext: this.newtodotext,
-                tododone: 'false'
+                tododone: false
             }
             );
             this.newtodotext = "";
@@ -77,7 +77,7 @@ var app = new Vue({
         togglecrossedout: function(i){              // Se il tododone ha true quest'ultimo diventa false
             if (this.todo[i].tododone == true){     // (inserito nel click per barrare i to do svolti e togliere barra
                 this.todo[i].tododone = false;      // ad elementi non svolti)
-            } else {
+            }else{
                 this.todo[i].tododone = true;
             }
         },
